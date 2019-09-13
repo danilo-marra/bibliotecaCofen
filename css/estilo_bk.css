@@ -1,0 +1,162 @@
+/**************************** GERAL ****************************/
+
+/*
+Cores: #E1ECF9 BG
+#609CE1 
+#236AB9
+#133863
+#091D34
+*/
+
+* {
+    font-family: 'Roboto', sans-serif; 
+}
+
+a {
+    color: #236AB9;
+}
+
+p {
+    color: #133863;
+}
+
+h1,h2,h3,h4,h5 {
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+h2 a, h3 a, h4 a, h5 a {
+    font-family: 'Roboto Condensed', sans-serif;
+    color: #091D34;
+}
+
+body {
+    background-color: #E1ECF9;
+}
+
+/**************************** TOPO ****************************/
+
+#logo {
+    width: 115px;
+    height: 10px;
+    float: left;
+}
+
+#banner-topo {
+    background: url(/img/imagemTopo.jpg);
+    background-repeat:no-repeat;
+    background-size: cover;
+    background-position:center;
+    height: 140px;
+    width: 100%;
+    
+}
+
+/* Small devices (0 até 576px)*/
+@media (max-width: 576px) {
+    #logo {
+        width: 70px;
+        height: 10px;
+    } 
+    #banner-topo {
+        max-height: 100px;
+    }
+    #busca, #redes-sociais-topo, .lupa {
+        display: none;
+    }
+    #sub-destaque-noticia {
+        margin-top: 20px;
+        text-align: center;
+    }
+    .data-pub {
+        margin-top: 10px;
+    }
+    footer {
+        text-align: center;
+    }
+}
+
+#busca, #redes-sociais-topo {
+    float: right;
+}
+
+.blue {
+    color:#007bff
+}
+
+.nav-link {
+    color: #236AB9 !important ; 
+    letter-spacing: 1px;
+} 
+
+.nav-link:hover {
+    color: #091D34  !important;
+}
+
+li.nav-item:hover {
+    background-color: #E1ECF9;
+}
+
+/**************************** CONTEUDO DESTAQUES ****************************/
+
+.img-sub-destaque {
+    padding: 15px 5px 0 5px;
+}
+
+/* acima de large devices (a partir de 900px)*/
+@media (min-width: 1200px) {
+    .img-sub-destaque {
+        padding-top: 0;
+        padding-bottom: 15px;
+    }
+}
+
+/**************************** CONTEUDO PRINCIPAL ****************************/
+
+.link-veja-mais {
+    float: right;
+}
+
+.list-group-item {
+    background-color: #f8f9fa;
+}
+
+/**************************** FOOTER ****************************/
+
+footer {
+   background-color: #f8f9fa!important;
+}
+
+footer h4 {
+    color: #091D34;
+}
+
+#redes-sociais-footer .list-group-item {
+    border: 0px
+}
+
+.lista-links, .texto-footer {
+    font-size: 0.9em;
+}
+
+
+
+/* Small devices (0 até 576px)*/
+@media (max-width: 576px) {
+    .form-footer input {
+        margin: 0 20px;
+    }
+    .form-footer button {
+        margin: 0 auto;
+    }
+    #horario {
+        margin: 20px 0;
+    }
+}
+
+/* Large devices (mais de 900px)*/
+@media (min-width: 900px) {
+    #endereco, #redes-sociais-footer, #links-rapidos  {
+        padding-left: 60px;
+    }
+
+}

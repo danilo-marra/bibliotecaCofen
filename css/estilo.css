@@ -1,0 +1,227 @@
+/**************************** GERAL ****************************/
+
+/*
+Cores: #E1ECF9 BG
+#609CE1
+#236AB9
+#133863
+#091D34
+*/
+
+* {
+    font-family: 'Roboto', sans-serif;
+}
+
+a {
+    color: #17a2b8;
+}
+
+p {
+    color: #133863;
+}
+
+h1,h2,h3,h4,h5 {
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+h2 a, h3 a, h4 a, h5 a {
+    font-family: 'Roboto Condensed', sans-serif;
+    color: #091d3a;
+}
+
+body {
+    background-color: #E1ECF9;
+}
+
+.alignleft {
+    float: left;
+    padding: 0.4em;
+}
+
+.alignright {
+    float: right;
+    padding: 0.4em;
+}
+
+.barra-funcoes {
+    display: inline-block;
+}
+
+.botao-imprimir {
+    display: inline-block;
+}
+
+.texto-imprimir {
+    padding-left:5px;
+}
+
+
+/**************************** TOPO ****************************/
+
+#logo a img {
+    width: 100px;
+    margin: 10px 0 0 20px
+}
+
+#banner-topo {
+    background: url(../img/imagemTopo.jpg);
+    background-repeat:no-repeat;
+    background-size: cover;
+    background-position:center;
+    height: 130px;
+}
+
+.titulo-portal {
+    margin-right: 25px;
+    font-weight: bold;
+    text-shadow: 2px 2px #e1ecf9;
+    color: #f8f9fa;
+    font-size:3em;
+}
+
+.titulo-portal a {
+    color: #0080c5;
+    text-decoration: none;
+}
+
+.view {
+    cursor: pointer;
+}
+
+
+/* Small devices (0 até 576px)*/
+@media (max-width: 576px) {
+
+    #logo {
+        text-align: center !important;
+    }
+
+    #logo a img {
+        width: 100px;
+    }
+    #busca, #redes-sociais-topo, .lupa {
+        display: none;
+    }
+    #sub-destaque-noticia {
+        margin-top: 20px;
+        text-align: center;
+    }
+    .data-pub {
+        margin-top: 10px;
+    }
+    footer {
+        text-align: center;
+    }
+}
+
+#redes-sociais-topo a {
+    color: #17a2b8;
+}
+
+#redes-sociais-topo a:hover{
+    color: #091d3a;
+}
+
+.blue {
+    color:#007bff
+}
+
+.navbar ul li {
+    position: relative;
+    display: inline-block;
+    font-weight: 500;
+
+}
+
+.navbar ul li a {
+    color: #17a2b8;
+        letter-spacing: 1.2px;
+        font-size: 1.1em;
+        padding: 10px;
+}
+
+.navbar ul li a:hover {
+    color: white;
+    background-color: #17a2b8;
+}
+
+
+.nav-link {
+    color: #17a2b8 !important;
+
+}
+
+.nav-link:hover {
+    color: white  !important;
+}
+
+li.nav-item:hover {
+    background-color: #17a2b8;
+}
+
+/**************************** CONTEUDO DESTAQUES ****************************/
+
+.img-sub-destaque {
+    padding: 15px 5px 0 5px;
+}
+
+/* acima de large devices (a partir de 900px)*/
+@media (min-width: 1200px) {
+    .img-sub-destaque {
+        padding-top: 0;
+        padding-bottom: 15px;
+    }
+}
+
+/**************************** CONTEUDO PRINCIPAL ****************************/
+
+.link-veja-mais {
+    float: right;
+}
+
+.list-group-item {
+    background-color: #f8f9fa;
+}
+
+/**************************** FOOTER ****************************/
+
+footer {
+   background-color: #f8f9fa!important;
+}
+
+footer h4 {
+    color: #17a2b8;
+}
+
+#redes-sociais-footer .list-group-item {
+    border: 0px
+}
+
+.lista-links, .texto-footer {
+    font-size: 0.9em;
+}
+
+/**************************** PAGINAÇÃO ****************************/
+
+
+/* Small devices (0 até 576px)*/
+@media (max-width: 576px) {
+    .form-footer input {
+        margin: 0 20px;
+    }
+    .form-footer button {
+        margin: 0 auto;
+    }
+    #horario {
+        margin: 20px 0;
+    }
+}
+
+/* Large devices (mais de 900px)*/
+@media (min-width: 900px) {
+    #endereco, #redes-sociais-footer, #links-rapidos  {
+        padding-left: 60px;
+    }
+
+}
+
