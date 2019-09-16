@@ -68,4 +68,25 @@ add_action( 'admin_init', 'custom_settings_page_setup' );
 // Imagem Destacada
 add_theme_support( 'post-thumbnails' );
 
-//Custom Post Type Destaque
+//Custom Post Type Destaque criado como plugin em wp-content->plugins
+
+//Custom Post Type Vídeos
+
+/*function create_post_type_videos () {
+	register_post_type('videos',
+	//Opções CPT
+		array(
+			'labels' => array (
+				'name'=> __('Vídeos'),
+				'singular_name' => __('Vídeo')
+			),
+			'public' => true,
+			'has_archive' => true,
+			'rewrite' => array('slug'=>'videos'),
+			'menu-icon' => 'dashicons-format-video',
+			)
+		);
+}
+
+add_action('init', 'create_post_type_videos');
+*/
