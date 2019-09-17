@@ -6,6 +6,8 @@
         <a href=""><img src="https://placehold.it/200x150" class="img-fluid my-4" alt=""></a>
         <a href=""><img src="https://placehold.it/200x150" class="img-fluid my-4" alt=""></a>
     </div>
+
+    <!--
     <h4>Arquivos</h4>
         <ol class="list-unstyled">
             <?php wp_get_archives( 'type=monthly' ); ?>
@@ -19,5 +21,5 @@
         <li><a href="<?php echo get_option('twitter'); ?>">Twitter</a></li>
         <li><a href="#">Facebook</a></li>
     </ol>
-    </div>
+    </div>-->
 </aside>
