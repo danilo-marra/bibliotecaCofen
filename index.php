@@ -39,4 +39,7 @@
             </div> <!-- col-lg-2 -->
         </div> <!-- row lg-10 lg-2 -->
     </div> <!-- container-fluid -->
+
+
+
 <?php get_footer(); ?>

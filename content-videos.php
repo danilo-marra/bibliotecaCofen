@@ -1,10 +1,13 @@
-<h2><a href="#">Vídeos</a></h2>
+<?php
+$post_type_obj = get_post_type_object( 'videos' );
+?>
 
+<h2><a href="<?php echo get_post_type_archive_link('videos'); ?>"><?php echo $post_type_obj->labels->name;?></a></h2>
 <hr>
 <div class="list-group text-center">
     <?php
         $args = array (
-            'post_type' => 'vídeos',
+            'post_type' => 'videos',
             'posts_per_page' => 3
         );
         $query_videos = new WP_Query($args);
@@ -18,12 +21,10 @@
             </div>
             <p class="descricao-video my-2"><?php the_title() ?></p>
         </li>
-
-
         <?php endwhile; ?>
         <?php wp_reset_postdata(); ?>
         <?php else : ?>
-            <p><?php esc_html_e( 'Sem posts para exibir' ); ?></p>
+            <p><?php esc_html_e( 'Sem vídeos para exibir' ); ?></p>
         <?php endif; ?>
 </div>
 

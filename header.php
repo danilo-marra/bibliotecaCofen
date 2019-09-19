@@ -49,9 +49,10 @@
                 </ul>
 
                 <div id="redes-sociais-topo" class="mr-3">
-                    <a href="#"><i class="fab fa-facebook fa-2x"></i></a>
-                    <a href="#"><i class="fab fa-instagram fa-2x mx-2"></i></a>
-                    <a href="#"><i class="fab fa-twitter fa-2x"></i></a>
+                    <a href="<?php echo get_option('facebook'); ?>"><i class="fab fa-facebook fa-2x"></i></a>
+                    <a href="<?php echo get_option('instagram'); ?>"><i class="fab fa-instagram fa-2x mx-2"></i></a>
+                    <a href="<?php echo get_option('twitter'); ?>"><i class="fab fa-twitter fa-2x"></i></a>
+                    <a href="<?php echo get_option('pinterest'); ?>"><i class="fab fa-pinterest fa-2x"> </i></a>
                 </div>
                 <form class="form-inline mt-2 mt-md-0">
                     <input class="form-control mr-sm-2" type="text" placeholder="Busca" aria-label="Busca">

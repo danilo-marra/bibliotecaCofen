@@ -25,16 +25,16 @@ add_action('wp_print_styles', 'bibliotecacofen_fontes');
 
 add_theme_support( 'title-tag' );
 
-// Custom settings
+//Custom Settings - Redes Sociais
 function custom_settings_add_menu() {
-	add_menu_page( 'Custom Settings', 'Custom Settings', 'manage_options', 'custom-settings', 'custom_settings_page', null, 99 );
+	add_menu_page( 'Redes Sociais', 'Redes Sociais', 'manage_options', 'redes-sociais', 'custom_settings_page', 'dashicons-share', 9 );
 }
 add_action( 'admin_menu', 'custom_settings_add_menu' );
 
 // Create Custom Global Settings
 function custom_settings_page() { ?>
 	<div class="wrap">
-		<h1>Menu Personalizado</h1>
+		<h1>Perfil Redes Sociais</h1>
 		<form method="post" action="options.php">
 				<?php
 						settings_fields( 'section' );
@@ -45,48 +45,72 @@ function custom_settings_page() { ?>
 	</div>
 <?php }
 
+
 // Twitter
 function setting_twitter() { ?>
 	<input type="text" name="twitter" id="twitter" value="<?php echo get_option( 'twitter' ); ?>" />
 <?php }
 
-// Github
-function setting_github() { ?>
-	<input type="text" name="github" id="github" value="<?php echo get_option('github'); ?>" />
+// Facebook
+function setting_facebook() { ?>
+	<input type="text" name="facebook" id="facebook" value="<?php echo get_option('facebook'); ?>" />
+<?php }
+
+// Instagram
+function setting_instagram() { ?>
+	<input type="text" name="instagram" id="instagram" value="<?php echo get_option('instagram'); ?>" />
+<?php }
+
+// Pinterest
+function setting_pinterest() { ?>
+	<input type="text" name="pinterest" id="pinterest" value="<?php echo get_option('pinterest'); ?>" />
 <?php }
 
 function custom_settings_page_setup() {
 	add_settings_section( 'section', 'All Settings', null, 'theme-options' );
-  add_settings_field( 'twitter', 'Twitter URL', 'setting_twitter', 'theme-options', 'section' );
-  add_settings_field( 'github', 'GitHub URL', 'setting_github', 'theme-options', 'section' );
+  add_settings_field( 'twitter', 'Link Perfil Twitter', 'setting_twitter', 'theme-options', 'section' );
+	add_settings_field( 'facebook', 'Link Perfil Facebook', 'setting_facebook', 'theme-options', 'section' );
+	add_settings_field( 'instagram', 'Link Perfil Instagram', 'setting_instagram', 'theme-options', 'section' );
+	add_settings_field( 'pinterest', 'Link Perfil Pinterest', 'setting_pinterest', 'theme-options', 'section' );
 
   register_setting('section', 'twitter');
-  register_setting( 'section', 'github' );
+	register_setting( 'section', 'facebook' );
+	register_setting( 'section', 'instagram' );
+	register_setting( 'section', 'pinterest' );
 }
 add_action( 'admin_init', 'custom_settings_page_setup' );
 
 // Imagem Destacada
 add_theme_support( 'post-thumbnails' );
 
-//Custom Post Type Destaque criado como plugin em wp-content->plugins
+//Custom Post Type Destaque e Videos criado como plugin em wp-content->plugins
 
-//Custom Post Type Vídeos
+//Custom Post Type Banners
 
-/*function create_post_type_videos () {
-	register_post_type('videos',
+function create_post_type_banner () {
+	register_post_type('banner',
 	//Opções CPT
 		array(
 			'labels' => array (
-				'name'=> __('Vídeos'),
-				'singular_name' => __('Vídeo')
+				'name'=> __('Banners'),
+				'singular_name' => __('Banner'),
+				'add_new'            => __( 'Adicionar Novo Banner' ),
+				'edit_item'          => __( 'Editar Banner' ),
+				'new_item'           => __( 'Novo Banner' ),
+				'all_items'          => __( 'Todos os Banners' ),
+				'view_item'          => __( 'Visualizar Banner' ),
+				'search_items'       => __( 'Buscar Banners' )
 			),
 			'public' => true,
 			'has_archive' => true,
-			'rewrite' => array('slug'=>'videos'),
-			'menu-icon' => 'dashicons-format-video',
+			'rewrite' => array('slug'=>'banner'),
+			'menu_icon' => 'dashicons-images-alt2',
+			'supports' => array( 'title, custom-fields' ),
+			'menu_position' => 8,
 			)
 		);
 }
 
-add_action('init', 'create_post_type_videos');
-*/
+add_action('init', 'create_post_type_banner');
+
+

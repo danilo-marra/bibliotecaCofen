@@ -7,9 +7,9 @@
 ?>
 <div id="noticias-enfermagem">
     <?php
-        $categorias = get_the_category();
-    ?>
-    <h2><?php the_category(', ') ?></h2>
+        $categories = get_the_category();
+     ?>
+    <h2><a href="<?php echo get_category_link(8) ?>"><?php echo get_cat_name(8); ?></a></h2>
     <hr>
     <?php if ( $query_not->have_posts() ) : while ( $query_not->have_posts() ) : $query_not->the_post(); ?>
     <!-- Com Imagem Destaque -->

@@ -1,4 +1,4 @@
-    <footer class="footer mt-auto py-3">
+    <footer class="footer mt-3 py-3">
         <div class="container-fluid">
             <div class="row">
                 <div id="links-rapidos" class="col-sm-4">
@@ -20,9 +20,12 @@
                     <h4 class="my-4">Horário de Funcionamento</h4>
                     <span class="texto-footer">Segunda à sexta: 8h às 17h</span>
                     <h4 class="my-4">Redes Sociais</h4>
-                    <a href="#"><i class="fab fa-facebook fa-lg mr-1"></i>Facebook</a>
-                    <a href="#" class="mx-2"><i class="fab fa-instagram fa-lg mr-1"></i>Instagram</a>
-                    <a href="#"><i class="fab fa-twitter fa-lg mr-1"></i>Twitter</a>
+                    <div class="redes-footer">
+                        <a href="<?php echo get_option('facebook'); ?>"><i class="fab fa-facebook fa-lg mr-1"></i>Facebook</a>
+                        <a href="<?php echo get_option('instagram'); ?>"><i class="fab fa-instagram fa-lg mr-1"></i>Instagram</a>
+                        <a href="<?php echo get_option('twitter'); ?>"><i class="fab fa-twitter fa-lg mr-1"></i>Twitter</a>
+                        <a href="<?php echo get_option('pinterest'); ?>"><i class="fab fa-pinterest fa-lg mr-1"> </i>Pinterest</a>
+                    </div>
                 </div>
                 <div id="newsletter" class="col-sm-4">
                     <h4>Se inscreva em nossa newsletter</h4>

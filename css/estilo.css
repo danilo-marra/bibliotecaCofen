@@ -204,6 +204,12 @@ li.nav-item:hover {
     height: 100%;
 }
 
+/*************************** BANNERS *****************************/
+.banner_img {
+    -webkit-box-shadow: inset 0px 0px 3px 1px rgba(97, 97, 97, 0.9);
+    -moz-box-shadow: inset 0px 0px 3px 1px rgba(97, 97, 97, 0.9);
+    box-shadow: inset 0px 0px 3px 1px rgba(97, 97, 97, 0.3)
+}
 
 /**************************** FOOTER ****************************/
 
@@ -221,6 +227,10 @@ footer h4 {
 
 .lista-links, .texto-footer {
     font-size: 0.9em;
+}
+
+.redes-footer a {
+    margin: 0px 0.2em;
 }
 
 /**************************** PAGINAÇÃO ****************************/
