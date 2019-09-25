@@ -256,6 +256,15 @@ footer h4 {
     margin: 0px 0.2em;
 }
 
+ul#menu-rodape {
+    list-style: none;
+    margin-bottom: 20px;
+}
+
+ul#menu-rodape a.nav-link {
+    border-bottom: 1px solid;
+}
+
 /**************************** PAGINAÇÃO ****************************/
 
 

@@ -35,41 +35,18 @@
                 ) );
                 ?>
 
+                <!-- fonte menu: https://github.com/wp-bootstrap/wp-bootstrap-navwalker -->
+
                 <div id="redes-sociais-topo" class="mr-3">
                     <a href="<?php echo get_option('facebook'); ?>"><i class="fab fa-facebook fa-2x"></i></a>
                     <a href="<?php echo get_option('instagram'); ?>"><i class="fab fa-instagram fa-2x mx-2"></i></a>
                     <a href="<?php echo get_option('twitter'); ?>"><i class="fab fa-twitter fa-2x"></i></a>
                     <a href="<?php echo get_option('pinterest'); ?>"><i class="fab fa-pinterest fa-2x"> </i></a>
                 </div>
-                <form class="form-inline mt-2 mt-md-0">
-                    <input class="form-control mr-sm-2" type="text" placeholder="Busca" aria-label="Busca">
+                <form action="<?php echo home_url();?>" id="search-form" class="form-inline mt-2 mt-md-0" method="get">
+                    <input class="form-control mr-sm-2" type="text" placeholder="Digita sua busca" name="s" id="s" aria-label="Busca" />
                     <button class="btn btn-info my-2 my-sm-0" type="submit">Pesquisar</button>
                 </form>
             </div>
         </nav>
     </header>
-
-
-
-    <!--
-                    <li class="nav-item active">
-                        <a class="nav-link" href="#">Home <span class="sr-only">(atual)</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Apresentação</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Acervo</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Legislação</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Biblioteca Corens</a>
-                    </li>
-                     <li class="nav-item">
-                         <a class="nav-link" href="#">Bases de Dados</a>
-                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Contato</a>
-                    </li>-->

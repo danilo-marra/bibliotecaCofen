@@ -3,20 +3,25 @@
             <div class="row">
                 <div id="links-rapidos" class="col-sm-4">
                     <h4>Links Rápidos</h4>
-                    <ul class="list-group list-group-flush lista-links">
-                        <li class="list-group-item"><a href="#">Apresentação</a></li>
-                        <li class="list-group-item"><a href="#">Acervo</a></li>
-                        <li class="list-group-item"><a href="#">Legislação</a></li>
-                        <li class="list-group-item"><a href="#">Biblioteca Corens</a></li>
-                        <li class="list-group-item"><a href="#">Base da dados para pesquisa</a></li>
-                        <li class="list-group-item"><a href="#">Contato</a></li>
-                        <li class="list-group-item"><a href="#">Busca</a></li>
-                    </ul>
+                <?php
+                wp_nav_menu( array(
+                     'theme_location'    => 'menu_rodape',
+                     'depth'             => 2,
+                     'container'         => 'div',
+                //  'container_id'      => 'links-rapidos',
+                   // 'container_class' => 'list-group-item',
+                    'menu_class'         => 'list-group list-group-flush lista-links',
+                    'menu_id'            => 'menu-rodape',
+                    'fallback_cb'      => 'WP_Bootstrap_Navwalker::fallback',
+                    'walker'           => new WP_Bootstrap_Navwalker(),
+                ) );
+                ?>
+
+
                 </div>
                 <div id="endereco" class="col-sm-4">
                     <h4>Endereço</h4>
-                    <span class="texto-footer">Asa Norte 304 Bloco E 09 - Asa Norte, Brasília - DF,
-                        70736-550</span>
+                    <span class="texto-footer">Asa Norte 304 Bloco E 09 - Asa Norte, Brasília - DF, 70736-550</span>
                     <h4 class="my-4">Horário de Funcionamento</h4>
                     <span class="texto-footer">Segunda à sexta: 8h às 17h</span>
                     <h4 class="my-4">Redes Sociais</h4>

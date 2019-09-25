@@ -1,8 +1,6 @@
 <?php
 
 // Register Custom Navigation Walker
-
-
 if ( ! file_exists( get_template_directory() . '/inc/class-wp-bootstrap-navwalker.php' ) ) {
 	// file does not exist... return an error.
 	return new WP_Error( 'class-wp-bootstrap-navwalker-missing', __( 'It appears the class-wp-bootstrap-navwalker.php file may be missing.', 'wp-bootstrap-navwalker' ) );
@@ -15,7 +13,8 @@ if ( ! file_exists( get_template_directory() . '/inc/class-wp-bootstrap-navwalke
 //Adicionando Menu no Wordpress
 register_nav_menus(
 	array(
-		'menu_principal' => __('Menu Principal', 'Biblioteca Cofen')
+		'menu_principal' => __('Menu Principal', 'Biblioteca Cofen'),
+		'menu_rodape' => __('Menu Rodapé', 'Biblioteca Cofen')
 	)
 );
 
