@@ -14,16 +14,21 @@
     <?php if ( $query_not->have_posts() ) : while ( $query_not->have_posts() ) : $query_not->the_post(); ?>
     <!-- Com Imagem Destaque -->
     <div class="row mb-4">
-        <?php if ( has_post_thumbnail() ) : ?>
+        <?php
+            $imgDestaque = get_field('imagem-post-destaque');
+            $altImagemThumb = get_field('alt_img_destaque');
+            $tamanho = 'noticias-thumb'; // (thumbnail, medium, large, full or custom size)
+        ?>
+        <?php if ( $imgDestaque ) : ?>
         <div class="col-sm-4 text-center">
-                <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('post-thumbnail', ['class' => 'img-fluid img-thumbnail',  'title' => get_the_title()]); ?></a>
+                <a title="<?php the_title_attribute(); ?>" href="<?php the_permalink(); ?>"><?php echo wp_get_attachment_image( $imgDestaque, $tamanho, "", array("class" => "img-fluid img-thumbnail", "alt" => $altImagemThumb) ); ?></a>
         </div> <!-- col-sm-4 -->
         <div class="col-sm-8">
             <h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
             <div class="data-pub">
                 <small><?php echo get_the_date(); ?> por <?php the_author_posts_link(); ?> às <?php the_time(); ?></small>
             </div> <!-- data-pub -->
-            <p><?php the_field('linha_fina_post'); ?></p>
+            <p><?php the_field('linha-fina-post-geral'); ?></p>
             <div class="barra-compartilhamento">
                 <small>
                     <a href="#"><span class="badge badge-light mr-1">14</span>Curtidas</a>
@@ -32,11 +37,12 @@
                 </small>
             </div> <!-- barra compartilhamento -->
         </div> <!-- col-sm-8 -->
+        <?php wp_reset_postdata();  ?>
         <?php else : ?>
         <!-- Sem Imagem Destacada -->
         <div class="col-sm-12">
             <h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-            <p><?php the_field('linha_fina_post'); ?></p>
+            <p><?php the_field('linha-fina-post-geral'); ?></p>
             <div class="data-pub">
                 <small><?php echo get_the_date(); ?> por <?php the_author_posts_link(); ?> às <?php the_time(); ?></small>
             </div> <!-- data-pub -->
@@ -48,7 +54,7 @@
                 </small>
             </div> <!-- barra compartilhamento -->
         </div>
-        <?php endif; ?> <!--  endif as_post_thumbnail -->
+        <?php endif; ?> <!--  endif sem imagem -->
     </div> <!-- row-->
     <?php endwhile; else : ?>
     <p><?php esc_html_e( 'Sem posts de notícias de enfermagem para exibir.' ); ?></p>

@@ -34,10 +34,16 @@
                 </div>
                 <div id="newsletter" class="col-sm-4">
                     <h4>Se inscreva em nossa newsletter</h4>
-                    <form class="form-inline my-2 my-lg-0 form-footer">
-                        <input class="form-control mr-sm-2" type="email" placeholder="Endereço de email">
-                        <button class="btn btn-info my-2 my-sm-0" type="submit">Enviar</button>
+                    <form action="https://cofen.us8.list-manage.com/subscribe/post?u=491d5606dfb784a4f29cd1ce8&amp;id=912f90c91a" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="form-inline my-2 my-lg-0 form-footer validate" target="_blank" novalidate>
+                        <input  id="mce-EMAIL" class="form-control mr-sm-2 required email" type="email" placeholder="Endereço de email"  value="" name="EMAIL">
+                        <div id="mce-responses" class="clear">
+                            <div class="response" id="mce-error-response" style="display:none"></div>
+                            <div class="response" id="mce-success-response" style="display:none"></div>
+                        </div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+                        <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_491d5606dfb784a4f29cd1ce8_912f90c91a" tabindex="-1" value=""></div>
+                        <button id="mc-embedded-subscribe" class="btn btn-info my-2 my-sm-0" type="submit">Enviar</button>
                     </form>
+
                 </div>
             </div>
             <div class="row mt-4">

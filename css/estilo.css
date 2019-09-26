@@ -196,6 +196,12 @@ li.nav-item:hover {
     }
 }
 
+/************************************* CONTEUDO SUB DESTAQUE  ***************/
+
+.subDestaque {
+    list-style: none;
+}
+
 /**************************** CONTEUDO PRINCIPAL ****************************/
 
 .link-veja-mais {

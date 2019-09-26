@@ -97,14 +97,15 @@ function custom_settings_page_setup() {
 }
 add_action( 'admin_init', 'custom_settings_page_setup' );
 
-// Imagem Destacada
+// Imagem Thumbnail
 add_theme_support( 'post-thumbnails' );
 
-//Imagem Destaque Home
+//Tamanhos
 add_action( 'after_setup_theme', 'wpdocs_theme_setup' );
 function wpdocs_theme_setup() {
 		add_image_size( 'destaque-home', 1100, 418, true ); // (cropped)
-		add_image_size( 'sub-destaque', 235, 120, true );
+		add_image_size( 'sub-destaque-home', 500, 150, true );
+		add_image_size( 'noticias-thumb', 370, 250, true );
 }
 
 //Custom Post Type Destaque e Videos criado como plugin em wp-content->plugins
