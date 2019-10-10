@@ -13,13 +13,16 @@ get_header(); ?>
     <div class="col-lg-10">
       <main>
         <?php if ( have_posts() ) : ?>
-          <h1 class="page-title"><?php printf( __( 'Resultados: %s', 'shape' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
+          <h1 class="page-title"><?php printf( __( 'Resultados: %s', 'biblioteca_cofen' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
           <?php /* Start the Loop */ ?>
           <?php while ( have_posts() ) : the_post(); ?>
 
             <?php get_template_part( 'content', 'search' ); ?>
 
           <?php endwhile; ?>
+
+          <?php // Page navigation.
+          echo bootstrap_pagination();?>
 
           <?php else : ?>
 

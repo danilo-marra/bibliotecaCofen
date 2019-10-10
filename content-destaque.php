@@ -20,14 +20,14 @@
     <?php rewind_posts(); ?>
         <div class="carousel-inner">
             <?php if ( $the_query->have_posts() ) : while ( $the_query->have_posts() ) : $the_query->the_post();
-                $imagemDestaque = get_field('imagem-destaque');
+                $imagemDestaqueHome = get_field('imagem_destaque_home');
                 $tamanho = 'destaque-home'; // (thumbnail, medium, large, full or custom size)
 
             ?>
             <div class="carousel-item <?php if ( $the_query->current_post == 0 ) : ?>active<?php endif; ?>">
-                <?php if ( $imagemDestaque ) : ?>
+                <?php if ( $imagemDestaqueHome ) : ?>
                 <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
-                    <?php echo wp_get_attachment_image( $imagemDestaque, $tamanho, "", array( "class" => "img-fluid"));?>
+                    <?php echo wp_get_attachment_image( $imagemDestaqueHome, $tamanho, "", array( "class" => "img-fluid img-thumbnail"));?>
                 </a>
                 <?php wp_reset_postdata();  ?>
                 <?php endif; ?>

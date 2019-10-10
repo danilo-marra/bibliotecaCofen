@@ -1,7 +1,11 @@
 <?php
     $args = array (
-        'category_name' => 'noticias-enfermagem',
-        'posts_per_page' => 4
+        //Todos os posts, destaques e sub-destaques
+        'post_type' => array('post', 'destaque', 'sub-destaque'),
+        'posts_per_page' => 6,
+        //'post__not_in' => array( 'artigos-cientificos', 'publicacoes-eletronicas', 'videos', 'banner'  ),
+        'category__not_in' => array(4, 5 ), //artigos e publicações eletrônicas
+        'order'     => 'DSC',
     );
     $query_not = new WP_Query( $args );
 ?>
@@ -15,27 +19,33 @@
     <!-- Com Imagem Destaque -->
     <div class="row mb-4">
         <?php
-            $imgDestaque = get_field('imagem-post-destaque');
-            $altImagemThumb = get_field('alt_img_destaque');
+            //$imgDestaque = get_field('imagem-post-destaque');
+           // $altImagemThumb = get_field('alt_img_destaque');
             $tamanho = 'noticias-thumb'; // (thumbnail, medium, large, full or custom size)
         ?>
-        <?php if ( $imgDestaque ) : ?>
+        <?php if ( has_post_thumbnail() ) : ?>
         <div class="col-sm-4 text-center">
-                <a title="<?php the_title_attribute(); ?>" href="<?php the_permalink(); ?>"><?php echo wp_get_attachment_image( $imgDestaque, $tamanho, "", array("class" => "img-fluid img-thumbnail", "alt" => $altImagemThumb) ); ?></a>
+                <a title="<?php the_title_attribute(); ?>" href="<?php the_permalink(); ?>"><?php the_post_thumbnail($tamanho, ['class' => 'img-fluid img-thumbnail']) ?></a>
+                <?php //echo wp_get_attachment_image( $imgDestaque, $tamanho, "", array("class" => "img-fluid img-thumbnail", "alt" => $altImagemThumb) ); ?>
         </div> <!-- col-sm-4 -->
         <div class="col-sm-8">
             <h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
             <div class="data-pub">
                 <small><?php echo get_the_date(); ?> por <?php the_author_posts_link(); ?> às <?php the_time(); ?></small>
+                    <?php if(function_exists('wp_print')) { print_link(); } ?>
             </div> <!-- data-pub -->
-            <p><?php the_field('linha-fina-post-geral'); ?></p>
-            <div class="barra-compartilhamento">
-                <small>
-                    <a href="#"><span class="badge badge-light mr-1">14</span>Curtidas</a>
-                    <a class="mx-2" href="#"> <i class="fas fa-share mr-1"></i>Compartilhar</a>
-                    <a href="<?php the_permalink(); ?>"> <i class="fa fa-plus-circle mr-1" aria-hidden="true"></i>Leia mais</a>
-                </small>
-            </div> <!-- barra compartilhamento -->
+            <?php
+                $linhafinaGeral = get_field('linha-fina-post-geral');
+                $linhafinaSubDestaque = get_field('linha-fina-post-sub-destaque');
+                $linhafinaDestaque = get_field('linha-fina-post-destaque');
+                if ( $linhafinaGeral ) : ?>
+                    <p><?php the_field('linha-fina-post-geral'); ?></p>
+                    <?php elseif  ( $linhafinaDestaque ) : ?>
+                        <p><?php the_field('linha-fina-post-destaque'); ?></p>
+                    <?php else : ?>
+                        <p><?php the_field('linha-fina-post-sub-destaque'); ?></p>
+                <?php endif; ?>
+            <?php get_template_part('inc/barra-compartilhamento-home'); ?>
         </div> <!-- col-sm-8 -->
         <?php wp_reset_postdata();  ?>
         <?php else : ?>

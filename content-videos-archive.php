@@ -26,7 +26,7 @@
 			<div class="media-body">
 				<h2 class="mt-0"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
 				<div class="data-pub">
-						<small><?php echo get_the_date(); ?> por <?php the_author_posts_link(); ?> às <?php the_time(); ?></small> <?php if(function_exists('wp_print')) { print_link(); } ?>
+						<small><?php echo get_the_date(); ?> por <?php the_author_posts_link(); ?> às <?php the_time(); ?></small>
 				</div> <!-- data-pub -->
 				<?php the_excerpt(); ?>
 			</div>
