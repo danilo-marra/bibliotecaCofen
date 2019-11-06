@@ -103,8 +103,8 @@ add_theme_support( 'post-thumbnails' );
 //Tamanhos
 add_action( 'after_setup_theme', 'wpdocs_theme_setup' );
 function wpdocs_theme_setup() {
-		add_image_size( 'destaque-home', 1100, 418, true ); // (cropped)
-		add_image_size( 'sub-destaque-home', 400, 125, true );
+		add_image_size( 'destaque-home', 1100, 390, true ); // (cropped)
+		add_image_size( 'sub-destaque-home', 450, 180, true );
 		add_image_size( 'noticias-thumb', 370, 250, true );
 }
 

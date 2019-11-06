@@ -44,7 +44,7 @@
                         <p><?php the_field('linha-fina-post-destaque'); ?></p>
                     <?php else : ?>
                         <p><?php the_field('linha-fina-post-sub-destaque'); ?></p>
-                <?php endif; ?>
+            <?php endif; ?>
             <?php get_template_part('inc/barra-compartilhamento-home'); ?>
         </div> <!-- col-sm-8 -->
         <?php wp_reset_postdata();  ?>
@@ -52,17 +52,22 @@
         <!-- Sem Imagem Destacada -->
         <div class="col-sm-12">
             <h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-            <p><?php the_field('linha-fina-post-geral'); ?></p>
             <div class="data-pub">
                 <small><?php echo get_the_date(); ?> por <?php the_author_posts_link(); ?> às <?php the_time(); ?></small>
+                <?php if(function_exists('wp_print')) { print_link(); } ?>
             </div> <!-- data-pub -->
-            <div class="barra-compartilhamento">
-                <small>
-                    <a href="#"><span class="badge badge-light mr-1">14</span>Curtidas</a>
-                    <a class="mx-2" href="#"> <i class="fas fa-share mr-1"></i>Compartilhar</a>
-                    <a href="<?php the_permalink(); ?>"> <i class="fa fa-plus-circle mr-1" aria-hidden="true"></i>Leia mais</a>
-                </small>
-            </div> <!-- barra compartilhamento -->
+            <?php
+                $linhafinaGeral = get_field('linha-fina-post-geral');
+                $linhafinaSubDestaque = get_field('linha-fina-post-sub-destaque');
+                $linhafinaDestaque = get_field('linha-fina-post-destaque');
+                if ( $linhafinaGeral ) : ?>
+                    <p><?php the_field('linha-fina-post-geral'); ?></p>
+                    <?php elseif  ( $linhafinaDestaque ) : ?>
+                        <p><?php the_field('linha-fina-post-destaque'); ?></p>
+                    <?php else : ?>
+                        <p><?php the_field('linha-fina-post-sub-destaque'); ?></p>
+            <?php endif; ?>
+            <?php get_template_part('inc/barra-compartilhamento-home'); ?>
         </div>
         <?php endif; ?> <!--  endif sem imagem -->
     </div> <!-- row-->

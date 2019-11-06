@@ -8,7 +8,7 @@ $post_type_obj = get_post_type_object( 'videos' );
     <?php
         $args = array (
             'post_type' => 'videos',
-            'posts_per_page' => 3
+            'posts_per_page' => 4
         );
         $query_videos = new WP_Query($args);
     ?>
@@ -19,7 +19,7 @@ $post_type_obj = get_post_type_object( 'videos' );
             <div class="lista_videos">
               <?php the_field('link_video') ?>
             </div>
-            <p class="descricao-video my-2"><?php the_title() ?></p>
+            <p class="descricao-video my-2"><a href="<?php the_permalink(); ?>"><?php the_title() ?></a></p>
         </li>
         <?php endwhile; ?>
         <?php wp_reset_postdata(); ?>

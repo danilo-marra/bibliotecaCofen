@@ -11,5 +11,12 @@ Exibição dos posts para a categoria Notícias Enfermagem, Publicações Eletr�
 				<hr>
 				<?php the_content(); ?>
 			<div class="barra-funcoes">
+			<p><?php the_tags('Tags: '); ?> </p>
+			<?php
+				$fonteMateria = get_field('fonte_post');
+			?>
+			<?php if ($fonteMateria): ?>
+				<p>Fonte: <a href="<?php the_field('link_fonte_post'); ?>"><?php the_field('fonte_post'); ?> </a></p>
+			<?php endif; ?>
 			</div>
 </div><!-- /.blog-post -->

@@ -1,7 +1,7 @@
 <div id="sub-destaque-noticia">
     <?php
         $args = array (
-            //'post_type' => 'sub-destaque',
+            'post_type' => 'sub-destaque',
             'posts_per_page' => 2
         );
         $querySub = new WP_Query( $args );

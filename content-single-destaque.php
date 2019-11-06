@@ -6,5 +6,12 @@
 	<?php the_content(); ?>
 	<hr>
 	<div class="barra-funcoes">
+	<p><?php the_tags('Tags: '); ?> </p>
+	<?php
+		$fonteDestaqueMateria = get_field('fonte_post_des');
+	?>
+	<?php if ($fonteDestaqueMateria): ?>
+		<p>Fonte: <a href="<?php the_field('link_fonte_post_des'); ?>"><?php the_field('fonte_post_des'); ?> </a></p>
+	<?php endif; ?>
 	</div>
 </div><!-- /.post-destaque mt-3 -->

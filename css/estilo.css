@@ -184,6 +184,10 @@ li.nav-item:hover {
 
 /**************************** CONTEUDO DESTAQUES ****************************/
 
+.img-sub {
+    width: 450px;
+}
+
 .img-sub-destaque {
     padding: 15px 5px 0 5px;
 }
@@ -200,11 +204,6 @@ li.nav-item:hover {
 
 .subDestaque {
     list-style: none;
-}
-
-.img-sub {
-    width: 400px;
-    height:125px;
 }
 
 /**************************** CONTEUDO PRINCIPAL ****************************/

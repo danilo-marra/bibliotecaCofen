@@ -19,7 +19,12 @@
                 <main>
                     <section id="imagens-noticias-destaque">
                         <div class="row mt-4">
-                            <?php get_template_part('content-destaques'); ?>
+                            <div class="col-lg-8">
+                                <?php get_template_part('content-destaque'); ?>
+                            </div>
+                            <div class="col-lg-4 text-center">
+                                <?php get_template_part('content-sub-destaque'); ?>
+                            </div>
                         </div>
                     </section>
                     <section id="conteudo-principal" class="my-5">

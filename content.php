@@ -7,7 +7,7 @@
  */
 ?>
 <div class="blog-post">
-	<!-- Se tiver imagem -->
+	<!-- Se tiver imagem thumbnail -->
 <?php if ( has_post_thumbnail() ) { ?>
 	<hr>
 		<div class="media">
