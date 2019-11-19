@@ -84,7 +84,7 @@ function setting_pinterest() { ?>
 <?php }
 
 function custom_settings_page_setup() {
-	add_settings_section( 'section', 'All Settings', null, 'theme-options' );
+	add_settings_section( 'section', 'Forneça o link de cada rede social', null, 'theme-options' );
   add_settings_field( 'twitter', 'Link Perfil Twitter', 'setting_twitter', 'theme-options', 'section' );
 	add_settings_field( 'facebook', 'Link Perfil Facebook', 'setting_facebook', 'theme-options', 'section' );
 	add_settings_field( 'instagram', 'Link Perfil Instagram', 'setting_instagram', 'theme-options', 'section' );
@@ -96,6 +96,55 @@ function custom_settings_page_setup() {
 	register_setting( 'section', 'pinterest' );
 }
 add_action( 'admin_init', 'custom_settings_page_setup' );
+
+//Rodapé
+function theme_settings_page()
+{
+    ?>
+	    <div class="wrap">
+	    <h1>Rodapé</h1>
+	    <form method="post" action="options.php">
+	        <?php
+	            settings_fields("section2");
+	            do_settings_sections("theme-options2");
+	            submit_button();
+	        ?>
+	    </form>
+		</div>
+	<?php }
+
+function endereco_rodape() { ?>
+	<input type="text" name="end_rodape" id="end_rodape" value="<?php echo get_option( 'end_rodape' ); ?>" />
+<?php }
+
+function hora_rodape() { ?>
+	<input type="text" name="h_rodape" id="h_rodape" value="<?php echo get_option( 'h_rodape' ); ?>" />
+<?php }
+
+
+
+function display_theme_panel_fields()
+{
+	add_settings_section("section2", "Forneça o dados de endereço e horário de funcionamento", null, "theme-options2");
+
+	add_settings_field("Endereço Rodapé", "Endereço", "endereco_rodape", "theme-options2", "section2");
+	add_settings_field("Horário de Funcionamento", "Horário de Funcionamento", "hora_rodape", "theme-options2", "section2");
+
+		register_setting("section2", "end_rodape");
+		register_setting("section2", "h_rodape");
+}
+
+add_action("admin_init", "display_theme_panel_fields");
+
+
+function add_theme_menu_item()
+{
+	add_menu_page("Theme Panel", "Theme Panel", "manage_options", "theme-panel", "theme_settings_page", null, 99);
+}
+
+add_action("admin_menu", "add_theme_menu_item");
+
+
 
 // Imagem Thumbnail
 add_theme_support( 'post-thumbnails' );
@@ -111,7 +160,6 @@ function wpdocs_theme_setup() {
 //Custom Post Type Destaque e Videos criado como plugin em wp-content->plugins
 
 //Custom Post Type Banners
-
 function create_post_type_banner () {
 	register_post_type('banner',
 	//Opções CPT

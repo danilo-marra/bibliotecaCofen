@@ -2,7 +2,7 @@
     $args = array (
         //Todos os posts, destaques e sub-destaques
         'post_type' => array('post', 'destaque', 'sub-destaque'),
-        'posts_per_page' => 6,
+        'posts_per_page' => 4,
         //'post__not_in' => array( 'artigos-cientificos', 'publicacoes-eletronicas', 'videos', 'banner'  ),
         'category__not_in' => array(4, 5 ), //artigos e publicações eletrônicas
         'order'     => 'DSC',

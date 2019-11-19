@@ -38,6 +38,7 @@
 </div>
 <div class="col-lg-4 text-center">
   <div id="sub-destaque-noticia">
+
       <?php
           $args = array (
               'posts_per_page' => 2,
@@ -48,6 +49,7 @@
       ?>
 
       <?php if ( $the_querySub->have_posts() ) : while ( $the_querySub->have_posts() ) : $the_querySub->the_post(); ?>
+
           <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
             <?php if (  has_post_thumbnail() ) : ?>
                 <?php the_post_thumbnail($tamanhoSub, ['class' => 'img-fluid img-thumbnail mb-1']) ?>

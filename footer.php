@@ -21,9 +21,9 @@
                 </div>
                 <div id="endereco" class="col-sm-4">
                     <h4>Endereço</h4>
-                    <span class="texto-footer">Asa Norte 304 Bloco E 09 - Asa Norte, Brasília - DF, 70736-550</span>
+                    <span id="end-footer" class="texto-footer"><?php echo get_option('end_rodape'); ?>
                     <h4 class="my-4">Horário de Funcionamento</h4>
-                    <span class="texto-footer">Segunda à sexta: 8h às 17h</span>
+                    <span class="texto-footer"><?php echo get_option('h_rodape') ?></span>
                     <h4 class="my-4">Redes Sociais</h4>
                     <div class="redes-footer">
                         <a href="<?php echo get_option('facebook'); ?>"><i class="fab fa-facebook fa-lg mr-1"></i>Facebook</a>
